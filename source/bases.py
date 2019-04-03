@@ -18,15 +18,25 @@ def decode(digits, base):
     # Handle up to base 36 [0-9a-z]
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     # TODO: Decode digits from binary (base 2)
-    # input >> 1011 etc
-    # know the length of the digit array
-    #  for bit in digit:
-        # if bit == 1:
-            # two_exp = bit[index]
-    # turn it int  2^3 2^2 2^1 2^0
-    # if bit is 1
+    power = 0
+    powered_bit_arr = []
+    for bit in range(len(digits)-1, -1, -1):
+        current_digit = bit
+        powered_bit = current_digit * (2 ** power)
+        power += 1
+        powered_bit_arr.append(powered_bit)
+        bin_to_decimal = sum(powered_bit_arr)
+        # return bin_to_decimal
+    print(bin_to_decimal)
+
     # TODO: Decode digits from hexadecimal (base 16)
-    # ...
+    # for hex in range(len(digits)-1, -1, -1):
+    #     current_digit = hex
+    #     powered_hex = current_digit * (16 ** power)
+    #     power += 1
+    #     powered_bit_arr.append(powered_bit)
+    #     bin_to_decimal = sum(powered_bit_arr)
+    #     return bin_to_decimal
     # TODO: Decode digits from any base (2 up to 36)
     # ...
 
@@ -85,3 +95,6 @@ def main():
 
 if __name__ == '__main__':
     main()
+
+
+    decode("1010",2)
