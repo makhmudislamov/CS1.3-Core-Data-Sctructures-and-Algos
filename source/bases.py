@@ -17,30 +17,8 @@ def decode(digits, base):
     return: int -- integer representation of number (in base 10)"""
     # Handle up to base 36 [0-9a-z]
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
-    # TODO: Decode digits from binary (base 2)
     power = 0
     powered_arr = []
-    for index in range(len(digits)-1, -1, -1):
-        current_digit = int(digits[index])
-        powered_bit = current_digit * (2 ** power)
-        power += 1
-        powered_arr.append(powered_bit)
-        # print(powered_bit_arr)
-    bin_to_decimal = sum(powered_arr)
-        # return bin_to_decimal
-    print(bin_to_decimal)
-
-    # TODO: Decode digits from hexadecimal (base 16)
-    for index in range(len(digits)-1, -1, -1):
-        current_digit = int(digits[index])
-        powered_bit = current_digit * (16 ** power)
-        power += 1
-        powered_arr.append(powered_bit)
-        # print(powered_bit_arr)
-    hex_to_decimal = sum(powered_arr)
-    # return bin_to_decimal
-    print(hex_to_decimal)
-    # TODO: Decode digits from any base (2 up to 36)
     for index in range(len(digits)-1, -1, -1):
         current_digit = int(digits[index])
         powered_bit = current_digit * (base ** power)
@@ -108,4 +86,4 @@ if __name__ == '__main__':
     main()
 
 
-    decode("1128",16)
+    decode("1128",2)
