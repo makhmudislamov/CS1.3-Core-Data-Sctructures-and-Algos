@@ -20,12 +20,13 @@ def decode(digits, base):
     # TODO: Decode digits from binary (base 2)
     power = 0
     powered_bit_arr = []
-    for bit in range(len(digits)-1, -1, -1):
-        current_digit = bit
+    for index in range(len(digits)-1, -1, -1):
+        current_digit = int(digits[index])
         powered_bit = current_digit * (2 ** power)
         power += 1
         powered_bit_arr.append(powered_bit)
-        bin_to_decimal = sum(powered_bit_arr)
+        print(powered_bit_arr)
+    bin_to_decimal = sum(powered_bit_arr)
         # return bin_to_decimal
     print(bin_to_decimal)
 
