@@ -19,20 +19,34 @@ def decode(digits, base):
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     # TODO: base should be 2-36
     # TODO: include hex 0-9 && A-F case >> lower, ord -87 ascii
-    has_letter = string.ascii_lowercase
+    letter_value = string.ascii_lowercase
     digits = digits.lower()
     power = 0
     powered_arr = []
     for index in range(len(digits)-1, -1, -1):
-        # if current digit is alfabhetical:
-        if index == has_letter:
-            letter_value = ord(index) - 87
-            powered_bit = letter_value * (base ** power)
-        else:
-            current_digit = int(digits[index])
-            powered_bit = current_digit * (base ** power)
-        power += 1
-        powered_arr.append(powered_bit)
+        value = digits[index]
+        # print(value)
+        # if current digit is letter value:
+        if value in letter_value:
+            # convert it to numerical value based on ascii
+            hex_value = ord(value) - 87
+            # print(digit_value)
+            # raise to appropriate power
+            powered_bit = hex_value * (base ** power)
+            power += 1
+            # append the value to powered_arr
+            powered_arr.append(powered_bit)
+        elif value.isnumeric(): 
+            digit_value = int(value)
+            # current_digit = int(digits[index])
+            powered_bit = digit_value * (base ** power)
+            power += 1
+            powered_arr.append(powered_bit)
+            # print(digit_value)
+        # current_digit = int(digits[index])
+        # powered_bit = current_digit * (base ** power)
+        # power += 1
+        # powered_arr.append(powered_bit)
         # print(powered_bit_arr)
     base_to_decimal = sum(powered_arr)
     # return bin_to_decimal
@@ -99,5 +113,5 @@ if __name__ == '__main__':
     main()
 
 
-    decode("1010",2)
+    decode("1010",37)
     # encode(25, 2)
