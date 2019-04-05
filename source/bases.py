@@ -17,8 +17,7 @@ def decode(digits, base):
     return: int -- integer representation of number (in base 10)"""
     # Handle up to base 36 [0-9a-z] >> check ascii decoding
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
-    # TODO: base should be 2-36
-    # TODO: include hex 0-9 && A-F case >> lower, ord -87 ascii
+    
     letter_value = string.ascii_lowercase
     digits = digits.lower()
     power = 0
@@ -26,17 +25,13 @@ def decode(digits, base):
     for index in range(len(digits)-1, -1, -1):
         value = digits[index]
         if value in letter_value:
-            hex_value = ord(value) - 87
-            powered_bit = hex_value * (base ** power)
-            
+            bit = ord(value) - 87         
         elif value.isnumeric(): 
-            digit_value = int(value)
-            powered_bit = digit_value * (base ** power)
-            
-            
+            bit = int(value)    
         else:
             print("error")
             raise ValueError('Error! Please enter base between 2-36')
+        powered_bit = bit * (base ** power)
         power += 1
         powered_arr.append(powered_bit)
         base_to_decimal = sum(powered_arr)
@@ -54,10 +49,15 @@ def encode(number, base):
     assert number >= 0, 'number is negative: {}'.format(number)
     # TODO: Encode number in binary (base 2)
     bit_arr = []
-    bits = number % 2
-    while bits != 0 or bits != 1:
-        bit_arr.append(bits)
-        print(bit_arr)
+    # bits = number % 2
+    # while bits != 0 or bits != 1:
+    #     bit_arr.append(bits)
+    #     print(bit_arr)
+    while number != 0:
+        number = number / 2
+        bit = number % 2
+        bit_arr.append(bit)
+    print(bit_arr)
     # TODO: Encode number in hexadecimal (base 16)
     # ...
     # TODO: Encode number in any base (2 up to 36)
@@ -102,5 +102,6 @@ def main():
 if __name__ == '__main__':
     main()
 
-    print(decode("1010", 2))
+    # print(decode("6aF", 16))
+    print(encode(10, 2))
     # encode(25, 2)
