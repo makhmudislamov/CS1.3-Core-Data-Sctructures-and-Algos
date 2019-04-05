@@ -17,20 +17,24 @@ def decode(digits, base):
     return: int -- integer representation of number (in base 10)"""
     # Handle up to base 36 [0-9a-z] >> check ascii decoding
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
-    
+
+    power = 0
+    hex_offset = 87
+    powered_arr = []
     letter_value = string.ascii_lowercase
     digits = digits.lower()
-    power = 0
-    powered_arr = []
+    # reverse iteration of the input
     for index in range(len(digits)-1, -1, -1):
         value = digits[index]
         if value in letter_value:
-            bit = ord(value) - 87         
+            # translating to hex value
+            bit = ord(value) - hex_offset
         elif value.isnumeric(): 
             bit = int(value)    
         else:
             print("error")
             raise ValueError('Error! Please enter base between 2-36')
+        # key formula
         powered_bit = bit * (base ** power)
         power += 1
         powered_arr.append(powered_bit)
@@ -44,10 +48,11 @@ def encode(number, base):
     base: int -- base to convert to
     return: str -- string representation of number (in given base)"""
     # Handle up to base 36 [0-9a-z]
-    # assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
+    assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     # Handle unsigned numbers only for now
     assert number >= 0, 'number is negative: {}'.format(number)
     bit = 0
+    hex_offset = 87
     encoded_base10 = ''
     # loop until the result of 
     while number != 0:  
@@ -57,7 +62,7 @@ def encode(number, base):
             raise ValueError('Error! Please enter base between 2-36')
         elif bit > 9:
             # translating to hex value and adding to final string
-            encoded_base10 += str(chr(bit + 87))
+            encoded_base10 += str(chr(bit + hex_offset))
         else:
             encoded_base10 += str(bit)
     # returning reversed string
