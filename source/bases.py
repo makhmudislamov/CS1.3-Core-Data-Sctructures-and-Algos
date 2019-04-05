@@ -44,25 +44,25 @@ def encode(number, base):
     base: int -- base to convert to
     return: str -- string representation of number (in given base)"""
     # Handle up to base 36 [0-9a-z]
-    assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
+    # assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
     # Handle unsigned numbers only for now
     assert number >= 0, 'number is negative: {}'.format(number)
-    # TODO: Encode number in binary (base 2)
-    bit_arr = []
-    # bits = number % 2
-    # while bits != 0 or bits != 1:
-    #     bit_arr.append(bits)
-    #     print(bit_arr)
-    while number != 0:
-        number = number / 2
-        bit = number % 2
-        bit_arr.append(bit)
-    print(bit_arr)
-    # TODO: Encode number in hexadecimal (base 16)
-    # ...
-    # TODO: Encode number in any base (2 up to 36)
-    # ...
-
+    bit = 0
+    encoded_base10 = ''
+    # loop until the result of 
+    while number != 0:  
+        bit = number % base
+        number = number // base
+        if base < 2 or base > 36:
+            raise ValueError('Error! Please enter base between 2-36')
+        elif bit > 9:
+            # translating to hex value and adding to final string
+            encoded_base10 += str(chr(bit + 87))
+        else:
+            encoded_base10 += str(bit)
+    # returning reversed string
+    return encoded_base10[::-1]
+  
 
 def convert(digits, base1, base2):
     """Convert given digits in base1 to digits in base2.
@@ -103,5 +103,5 @@ if __name__ == '__main__':
     main()
 
     # print(decode("6aF", 16))
-    print(encode(10, 2))
+    print(encode(10, 1))
     # encode(25, 2)
