@@ -15,13 +15,22 @@ def decode(digits, base):
     digits: str -- string representation of number (in given base)
     base: int -- base of given number
     return: int -- integer representation of number (in base 10)"""
-    # Handle up to base 36 [0-9a-z]
+    # Handle up to base 36 [0-9a-z] >> check ascii decoding
     assert 2 <= base <= 36, 'base is out of range: {}'.format(base)
+    # TODO: base should be 2-36
+    # TODO: include hex 0-9 && A-F case >> lower, ord -87 ascii
+    has_letter = string.ascii_lowercase
+    digits = digits.lower()
     power = 0
     powered_arr = []
     for index in range(len(digits)-1, -1, -1):
-        current_digit = int(digits[index])
-        powered_bit = current_digit * (base ** power)
+        # if current digit is alfabhetical:
+        if index == has_letter:
+            letter_value = ord(index) - 87
+            powered_bit = letter_value * (base ** power)
+        else:
+            current_digit = int(digits[index])
+            powered_bit = current_digit * (base ** power)
         power += 1
         powered_arr.append(powered_bit)
         # print(powered_bit_arr)
@@ -40,7 +49,11 @@ def encode(number, base):
     # Handle unsigned numbers only for now
     assert number >= 0, 'number is negative: {}'.format(number)
     # TODO: Encode number in binary (base 2)
-    # ...
+    bit_arr = []
+    bits = number % 2
+    while bits != 0 or bits != 1:
+        bit_arr.append(bits)
+        print(bit_arr)
     # TODO: Encode number in hexadecimal (base 16)
     # ...
     # TODO: Encode number in any base (2 up to 36)
@@ -86,4 +99,5 @@ if __name__ == '__main__':
     main()
 
 
-    decode("1128",2)
+    decode("1010",2)
+    # encode(25, 2)
