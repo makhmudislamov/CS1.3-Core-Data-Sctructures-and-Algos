@@ -28,19 +28,19 @@ def decode(digits, base):
         if value in letter_value:
             hex_value = ord(value) - 87
             powered_bit = hex_value * (base ** power)
-            power += 1
-            powered_arr.append(powered_bit)
+            
         elif value.isnumeric(): 
             digit_value = int(value)
             powered_bit = digit_value * (base ** power)
-            power += 1
-            powered_arr.append(powered_bit)
+            
+            
         else:
             print("error")
             raise ValueError('Error! Please enter base between 2-36')
+        power += 1
+        powered_arr.append(powered_bit)
         base_to_decimal = sum(powered_arr)
     return base_to_decimal
-    # print(base_to_decimal)
 
 
 def encode(number, base):
@@ -102,5 +102,5 @@ def main():
 if __name__ == '__main__':
     main()
 
-    print(decode("1010", 38))
+    print(decode("1010", 2))
     # encode(25, 2)
