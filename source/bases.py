@@ -25,32 +25,22 @@ def decode(digits, base):
     powered_arr = []
     for index in range(len(digits)-1, -1, -1):
         value = digits[index]
-        # print(value)
-        # if current digit is letter value:
         if value in letter_value:
-            # convert it to numerical value based on ascii
             hex_value = ord(value) - 87
-            # print(digit_value)
-            # raise to appropriate power
             powered_bit = hex_value * (base ** power)
             power += 1
-            # append the value to powered_arr
             powered_arr.append(powered_bit)
         elif value.isnumeric(): 
             digit_value = int(value)
-            # current_digit = int(digits[index])
             powered_bit = digit_value * (base ** power)
             power += 1
             powered_arr.append(powered_bit)
-            # print(digit_value)
-        # current_digit = int(digits[index])
-        # powered_bit = current_digit * (base ** power)
-        # power += 1
-        # powered_arr.append(powered_bit)
-        # print(powered_bit_arr)
-    base_to_decimal = sum(powered_arr)
-    # return bin_to_decimal
-    print(base_to_decimal)
+        else:
+            print("error")
+            raise ValueError('Error! Please enter base between 2-36')
+        base_to_decimal = sum(powered_arr)
+    return base_to_decimal
+    # print(base_to_decimal)
 
 
 def encode(number, base):
@@ -112,6 +102,5 @@ def main():
 if __name__ == '__main__':
     main()
 
-
-    decode("1010",37)
+    print(decode("1010", 38))
     # encode(25, 2)
