@@ -14,9 +14,15 @@ def factorial(n):
 
 def factorial_iterative(n):
     # TODO: implement the factorial function iteratively here
-    pass
+    
     # once implemented, change factorial (above) to call factorial_iterative
     # to verify that your iterative implementation passes all tests
+    # check if n is one of the base cases
+    if n == 0 or n == 1:
+        return 1
+    # check if n is an integer larger than the base cases
+    elif n > 1:
+        return n * factorial_iterative(n - 1)
 
 
 def factorial_recursive(n):
