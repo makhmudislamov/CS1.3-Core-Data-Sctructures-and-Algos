@@ -27,6 +27,8 @@ def linear_search_recursive(array, item, index=0):
             # return its positon
         # else
             # return not found
+    if len(array) == 0:
+        return None
     if array[index] == item:
         return index
 
@@ -68,7 +70,19 @@ def binary_search_iterative(array, item):
 
 
 def binary_search_recursive(array, item, left=None, right=None):
-    # TODO: implement binary search recursively here
-    pass
-    # once implemented, change binary_search to call binary_search_recursive
-    # to verify that your recursive implementation passes all tests
+    # declaring left and right edges of the array
+    left = 0
+    right = len(array) - 1
+
+    # declaring midpoint index
+    mid_index = (left + right) // 2
+    if left > right:
+        return None
+    elif array[mid_index] == item:
+        return mid_index
+    elif array[mid_index] > item:
+        return binary_search_recursive(array, item, left, mid_index - 1)
+    else:
+        return binary_search_recursive(array, item, mid_index + 1, right)
+
+    
