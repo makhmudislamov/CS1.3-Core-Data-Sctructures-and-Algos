@@ -17,8 +17,8 @@ def factorial_iterative(n):
         return 1
     total = 1
     #  TODO: revisit
-    # while total > 1:
-    # total = total * n
+    # while n > 1:
+    # total = total * n >>> total *= n
     # decrement n
 
     # return total

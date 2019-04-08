@@ -9,6 +9,7 @@ def linear_search(array, item):
 
 
 def linear_search_iterative(array, item):
+    """return the index of a wanted item implementing linear search"""
     # loop over all array values until item is found
     for index, value in enumerate(array):
         if item == value:
@@ -17,29 +18,19 @@ def linear_search_iterative(array, item):
 
 
 def linear_search_recursive(array, item, index=0):
-    # TODO: implement linear search recursively here
-    
-    # PSEUDOCODE
-    # if first item is what Im looking for
-        # return its position
-    # else, iterate throught the rest of the item:
-        # if item is found
-            # return its positon
-        # else
-            # return not found
+    """return the index of a wanted item implementing linear recursive search"""
+    # base case1 array is empty
     if len(array) == 0:
         return None
-    if array[index] == item:
+    # base case2 
+    elif index >= len(array):
+        return None
+    # base case3 initial index is a position of what we are looking for
+    elif array[index] == item:
         return index
+    else:
+        return linear_search_recursive(array, item, index + 1)
 
-    for index in array:
-        if array[index] == item:
-            return index
-        else:
-            return None
-    # EDGE CASE:
-    # if array is empty
-        # return not found and print "array is empty"
 
 
 def binary_search(array, item):
@@ -51,7 +42,7 @@ def binary_search(array, item):
 
 
 def binary_search_iterative(array, item):
-
+    """return the index of a wanted item implementing binary iterative search"""
     # declaring left and right edges of the array
     left = 0
     right = len(array) -1
@@ -70,6 +61,7 @@ def binary_search_iterative(array, item):
 
 
 def binary_search_recursive(array, item, left=None, right=None):
+    """return the index of a wanted item implementing binary recursive search"""
     # declaring left and right edges of the array
     left = 0
     right = len(array) - 1
