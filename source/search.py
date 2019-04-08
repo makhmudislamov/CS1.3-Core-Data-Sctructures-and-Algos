@@ -21,6 +21,17 @@ def linear_search_recursive(array, item, index=0):
     pass
     # once implemented, change linear_search to call linear_search_recursive
     # to verify that your recursive implementation passes all tests
+    # PSEUDOCODE
+    # if first item is what Im looking for
+        # return its position
+    # else, iterate throught the rest of the item:
+        # if item is found
+            # return its positon
+        # else
+            # return not found
+    # EDGE CASE:
+    # if array is empty
+        # return not found and print "array is empty"
 
 
 def binary_search(array, item):
