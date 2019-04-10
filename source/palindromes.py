@@ -19,7 +19,6 @@ def is_palindrome(text):
 
 def is_palindrome_iterative(text):
     # TODO: implement the is_palindrome function iteratively here
-    pass
     # once implemented, change is_palindrome to call is_palindrome_iterative
     # to verify that your iterative implementation passes all tests
 
@@ -31,7 +30,15 @@ def is_palindrome_iterative(text):
             # return true
         # else
             # return false
-
+    
+    reversed_text = ''
+    for letter in reversed(text):
+        reversed_text.join(letter)
+        print(reversed_text)
+        if reversed_text == text:
+            return True
+        else:
+            False
 
 
 def is_palindrome_recursive(text, left=None, right=None):
@@ -56,4 +63,6 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    # main()
+
+    print(is_palindrome_iterative("rabbon"))
