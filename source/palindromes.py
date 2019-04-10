@@ -18,19 +18,12 @@ def is_palindrome(text):
 
 
 def is_palindrome_iterative(text):
-    # TODO: implement the is_palindrome function iteratively here
-    # once implemented, change is_palindrome to call is_palindrome_iterative
-    # to verify that your iterative implementation passes all tests
+    """ Check if the input is palindrome using iterative method """
+    if text is not text.isalpha():
+        raise ValueError('Please input a string')
+    else:
+        return text.lower()
 
-    # PSEUDOCODE
-    # create and empty list name reversed_text
-    # reverse iterate throught the text
-        # place letters in the text to empty list
-        # if reversed text is equal to text
-            # return true
-        # else
-            # return false
-    
     reversed_text = ''
     for letter in reversed(text):
         reversed_text += str(letter)
@@ -39,7 +32,7 @@ def is_palindrome_iterative(text):
         return True    
     else:
         print('not palindrome')
-        False
+        return False
             
 
 
@@ -67,4 +60,4 @@ def main():
 if __name__ == '__main__':
     # main()
 
-    print(is_palindrome_iterative("rabbar"))
+    print(is_palindrome_iterative('AziZA'))
