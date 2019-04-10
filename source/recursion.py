@@ -13,20 +13,19 @@ def factorial(n):
 
 
 def factorial_iterative(n):
-    if n == 0 or n == 1:
+    if n < 2:
         return 1
     total = 1
-    #  TODO: revisit
-    # while n > 1:
-    # total = total * n >>> total *= n
-    # decrement n
+    while n > 1:
+        total *= n
+        n -= 1
 
-    # return total
+    return total
 
 
 def factorial_recursive(n):
     # check if n is one of the base cases
-    if n == 0 or n == 1:
+    if n < 2:
         return 1
     # check if n is an integer larger than the base cases
     elif n > 1:

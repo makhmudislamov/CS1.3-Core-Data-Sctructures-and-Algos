@@ -19,11 +19,13 @@ def is_palindrome(text):
 
 def is_palindrome_iterative(text):
     """ Check if the input is palindrome using iterative method """
-    if text is not text.isalpha():
+    # TODO1: fix the ValueError
+    # TODO2: edge case input has space and puncutation
+    if text is not str:
         raise ValueError('Please input a string')
     else:
         return text.lower()
-
+    print(text)
     reversed_text = ''
     for letter in reversed(text):
         reversed_text += str(letter)
@@ -41,6 +43,7 @@ def is_palindrome_recursive(text, left=None, right=None):
     pass
     # once implemented, change is_palindrome to call is_palindrome_recursive
     # to verify that your iterative implementation passes all tests
+    
 
 
 def main():
@@ -60,4 +63,4 @@ def main():
 if __name__ == '__main__':
     # main()
 
-    print(is_palindrome_iterative('AziZA'))
+    print(is_palindrome_iterative('2AziZA2'))
