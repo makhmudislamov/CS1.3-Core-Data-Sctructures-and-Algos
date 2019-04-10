@@ -26,16 +26,15 @@ def is_palindrome_iterative(text):
     # else:
     #     return text.lower()
     text = text.lower()
-    print(text)
-    reversed_text = ''
-    for char in reversed(text):
-        reversed_text += str(char)
+    reversed_text = text[::-1]
+    print(reversed_text)
     if reversed_text == text:
         print('palindrome')
         return True    
     else:
         print('not palindrome')
         return False
+    # another method would be iterate from both ends
             
 
 
