@@ -23,6 +23,16 @@ def is_palindrome_iterative(text):
     # once implemented, change is_palindrome to call is_palindrome_iterative
     # to verify that your iterative implementation passes all tests
 
+    # PSEUDOCODE
+    # create and empty list name reversed_text
+    # reverse iterate throught the text
+        # place letters in the text to empty list
+        # if reversed text is equal to text
+            # return true
+        # else
+            # return false
+
+
 
 def is_palindrome_recursive(text, left=None, right=None):
     # TODO: implement the is_palindrome function recursively here
