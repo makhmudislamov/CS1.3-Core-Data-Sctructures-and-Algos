@@ -50,8 +50,10 @@ def binary_search_iterative(array, item):
     while left <= right:
         # declaring midpoint index
         mid_index = (left + right) // 2
+        if array[left] == item:
+            return left
         # check if item in the midpoint is what we need
-        if array[mid_index] == item:
+        elif array[mid_index] == item:
             return mid_index
         # if midpoint item is greater than wanted item, shift midpoint
         elif array[mid_index] > item:
@@ -59,12 +61,17 @@ def binary_search_iterative(array, item):
         else:
             right = mid_index - 1
 
+ 
+    
 
 def binary_search_recursive(array, item, left=None, right=None):
     """return the index of a wanted item implementing binary recursive search"""
     # declaring left and right edges of the array
-    left = 0
-    right = len(array) - 1
+    if left == None and right == None:
+        left = 0
+        right = len(array) - 1
+    elif left == None or right == None:
+        raise ValueError("Set value for left and right")
 
     # declaring midpoint index
     mid_index = (left + right) // 2
