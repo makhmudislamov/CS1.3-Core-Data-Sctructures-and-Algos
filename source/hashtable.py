@@ -27,7 +27,10 @@ class HashTable(object):
         """Return the load factor, the ratio of number of entries to buckets.
         Best and worst case running time: ??? under what conditions? [TODO]"""
         # TODO: Calculate load factor
+        load_factor = self.size / len(self.buckets)
+        return load_factor
         # return ...
+        
 
     def keys(self):
         """Return a list of all keys in this hash table.
@@ -148,7 +151,7 @@ class HashTable(object):
         # TODO: Get a list to temporarily hold all current key-value entries
         # ...
         # TODO: Create a new list of new_size total empty linked list buckets
-        # ...
+        # self.__init__(new_size)
         # TODO: Insert each key-value entry into the new list of buckets,
         # which will rehash them into a new bucket index based on the new size
         # ...
