@@ -32,5 +32,10 @@ class Set(object):
     def is_subset(self, other_set):
         """Returns a boolean indicating whether other_set is a subset of this set"""
         pass
-    
+
+
+if __name__ == '__main__':
+    pass
+
+
     
