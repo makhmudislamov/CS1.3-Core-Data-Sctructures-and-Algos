@@ -26,11 +26,11 @@ def is_palindrome_iterative(text):
 #     else:
 #         return text.lower()
 #     text = text.lower()
-    clean_text = str.maketrans(string.ascii_lowercase, string.ascii_uppercase, string.whitespace + string.punctuation)
-    print(clean_text)
-    
-    reversed_text = clean_text[::-1]
 
+#     clean_text = str.maketrans(string.ascii_lowercase, string.ascii_uppercase, string.whitespace + string.punctuation)
+#     print(clean_text)
+    
+    reversed_text = text[::-1]
     if reversed_text == text:
         print('palindrome')
         return True    
