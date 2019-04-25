@@ -44,6 +44,7 @@ def is_palindrome_iterative(text):
 
 
 def is_palindrome_recursive(text, left=None, right=None):
+    """ Check if the input is palindrome using recursive method """
     # TODO: implement the is_palindrome function recursively here
     # pass
     # once implemented, change is_palindrome to call is_palindrome_recursive
@@ -57,14 +58,19 @@ def is_palindrome_recursive(text, left=None, right=None):
         left = 0
         right = len(text) - 1
 
+    if left >= right:
+        return True
+    elif text[left] != text[right]:
+        return False
+    else:
+        return is_palindrome_recursive(text, left + 1, right - 1)
+
+
     
 
 
 
 
-
-
-    
 
 def main():
     import sys
@@ -83,5 +89,5 @@ def main():
 if __name__ == '__main__':
     # main()
 
-    print(is_palindrome_iterative('2aziz..   A2'))
+    print(is_palindrome_recursive('2aziza2'))
 #     print(is_palindrome_iterative(323))
