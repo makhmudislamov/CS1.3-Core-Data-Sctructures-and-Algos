@@ -25,11 +25,14 @@ def is_palindrome_iterative(text):
 #         raise ValueError('Please input a string')
 #     else:
 #         return text.lower()
-#     text = text.lower()
-
+    text = text.lower()
+    text = ''.join(e for e in text if e.isalnum())
+    print(text)
+#     TODO3: find to work this line out
 #     clean_text = str.maketrans(string.ascii_lowercase, string.ascii_uppercase, string.whitespace + string.punctuation)
-#     print(clean_text)
+
     
+#     this part works dont touch
     reversed_text = text[::-1]
     if reversed_text == text:
         print('palindrome')
@@ -69,4 +72,5 @@ def main():
 if __name__ == '__main__':
     # main()
 
-    print(is_palindrome_iterative('2AziZA2!!!'))
+    print(is_palindrome_iterative('2aziz..   A2'))
+    print(is_palindrome_iterative(323))
