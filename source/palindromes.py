@@ -21,23 +21,23 @@ def is_palindrome_iterative(text):
     """ Check if the input is palindrome using iterative method """
     # TODO1: fix the ValueError
     # TODO2: edge case input has whitespace and puncutation
-    # if text === str:
-    #     raise ValueError('Please input a string')
-    # else:
-    #     return text.lower()
-    # text = text.lower()
+#     if text === str:
+#         raise ValueError('Please input a string')
+#     else:
+#         return text.lower()
+#     text = text.lower()
     clean_text = str.maketrans(string.ascii_lowercase, string.ascii_uppercase, string.whitespace + string.punctuation)
     print(clean_text)
     
-    # reversed_text = clean_text[::-1]
+    reversed_text = clean_text[::-1]
 
-    # if reversed_text == text:
-    #     print('palindrome')
-    #     return True    
-    # else:
-    #     print('not palindrome')
-    #     return False
-    # another method would be iterate from both ends
+    if reversed_text == text:
+        print('palindrome')
+        return True    
+    else:
+        print('not palindrome')
+        return False
+#     another method would be iterate from both ends
             
 
 
