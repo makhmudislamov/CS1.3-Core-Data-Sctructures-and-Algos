@@ -45,13 +45,25 @@ def is_palindrome_iterative(text):
 
 def is_palindrome_recursive(text, left=None, right=None):
     # TODO: implement the is_palindrome function recursively here
-    pass
+    # pass
     # once implemented, change is_palindrome to call is_palindrome_recursive
     # to verify that your iterative implementation passes all tests
     # PSEUDOCODE
-    # set left and right bounds
+    # set left and right bounds - DONE
     # if left bound is nor equal to right bound:
         # return false
+    # left and right bounds
+    if left == None and right == None:
+        left = 0
+        right = len(text) - 1
+
+    
+
+
+
+
+
+
     
 
 def main():
