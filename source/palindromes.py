@@ -30,7 +30,6 @@ def is_palindrome_iterative(text):
 #     print(text)
 #     TODO3: find to work this line out
 #     clean_text = str.maketrans(string.ascii_lowercase, string.ascii_uppercase, string.whitespace + string.punctuation)
-
 #     this part works dont touch
     reversed_text = text[::-1]
     if reversed_text == text:
@@ -39,21 +38,12 @@ def is_palindrome_iterative(text):
     else:
         print('not palindrome')
         return False
-#     another method would be iterate from both ends
+
             
 
 
 def is_palindrome_recursive(text, left=None, right=None):
     """ Check if the input is palindrome using recursive method """
-    # TODO: implement the is_palindrome function recursively here
-    # pass
-    # once implemented, change is_palindrome to call is_palindrome_recursive
-    # to verify that your iterative implementation passes all tests
-    # PSEUDOCODE
-    # set left and right bounds - DONE
-    # if left bound is nor equal to right bound:
-        # return false
-    # left and right bounds
     if left == None and right == None:
         left = 0
         right = len(text) - 1
@@ -64,13 +54,6 @@ def is_palindrome_recursive(text, left=None, right=None):
         return False
     else:
         return is_palindrome_recursive(text, left + 1, right - 1)
-
-
-    
-
-
-
-
 
 def main():
     import sys
@@ -87,7 +70,4 @@ def main():
 
 
 if __name__ == '__main__':
-    # main()
-
-    print(is_palindrome_recursive('2aziza2'))
-#     print(is_palindrome_iterative(323))
+    main()

@@ -7,6 +7,7 @@ def contains(text, pattern):
     # TODO: Implement contains here (iteratively and/or recursively)
 
 
+
 def find_index(text, pattern):
     """Return the starting index of the first occurrence of pattern in text,
     or None if not found."""
