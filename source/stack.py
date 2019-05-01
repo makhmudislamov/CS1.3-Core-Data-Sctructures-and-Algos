@@ -35,7 +35,7 @@ class LinkedStack(object):
         """Insert the given item on the top of this stack.
         Running time: O(n) >>> We have to traverse through the LL to reach the tail"""
         self.list.append(item)
-        self.list.size += 1
+        
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
@@ -54,8 +54,8 @@ class LinkedStack(object):
             raise ValueError('The stack is empty')
         else:
             top_data = self.list.tail.data
-            self.list.size -= 1
-            return self.list.delete(top_data)
+            self.list.delete(top_data)
+            return top_data
 
 # Implement ArrayStack below, then change the assignment at the bottom
 # to use this Stack implementation to verify it passes all tests
