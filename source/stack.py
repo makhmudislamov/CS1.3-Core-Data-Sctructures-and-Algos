@@ -101,11 +101,10 @@ class ArrayStack(object):
         """Return the item on the top of this stack without removing it,
         or None if this stack is empty."""
         # TODO: Return top item, if any
-        if self.list is None:
+        if not self.list:
             return None
         else:
-            last_index = len(self.list) - 1
-            return self.list[last_index]
+            return self.list[-1]
 
     def pop(self):
         """Remove and return the item on the top of this stack,
@@ -113,11 +112,10 @@ class ArrayStack(object):
         Running time: O(n) – Why? >>> removing last item is O(1) but in order to know what is new last item we have to traverse"""
         # TODO: Remove and return top item, if any
         
-        if self.list[0] is None:
+        if not self.list:
             raise ValueError('The Stack is empty')
         else:
-            self.list.pop(-1)
-            return self.list[-1]
+            return self.list.pop(-1)
 
 
 # Implement LinkedStack and ArrayStack above, then change the assignment below
