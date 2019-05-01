@@ -22,14 +22,19 @@ class LinkedQueue(object):
     def is_empty(self):
         """Return True if this queue is empty, or False otherwise."""
         # TODO: Check if empty
+        if not self.list:
+            return None
+        else:
+            return False
 
     def length(self):
         """Return the number of items in this queue."""
         # TODO: Count number of items
+        return self.list.size
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(1) – Why? back of the queue can be accessed via LL head, no need to traverse"""
         # TODO: Insert given item
 
     def front(self):
@@ -96,5 +101,5 @@ class ArrayQueue(object):
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below
 # to use each of your Queue implementations to verify they each pass all tests
-# Queue = LinkedQueue
-Queue = ArrayQueue
+Queue = LinkedQueue
+# Queue = ArrayQueue
