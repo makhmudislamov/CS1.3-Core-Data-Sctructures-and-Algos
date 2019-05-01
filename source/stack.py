@@ -39,6 +39,7 @@ class LinkedStack(object):
         Running time: O(n) >>> We have to traverse through the LL to reach the tail"""
         # TODO: Push given item
         self.list.append(item)
+        self.list.size += 1
 
     def peek(self):
         """Return the item on the top of this stack without removing it,
