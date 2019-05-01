@@ -37,6 +37,7 @@ class LinkedQueue(object):
         Running time: O(1) – Why? >>> back of the queue can be accessed via LL head, no need to traverse"""
         # TODO: Insert given item
         self.list.prepend(item)
+        self.list.size += 1
 
 
     def front(self):
@@ -57,6 +58,7 @@ class LinkedQueue(object):
         if not self.list.head:
             raise ValueError('The queue is empty')
         else:
+            self.list.size -= 1
             return self.list.delete
 
 
