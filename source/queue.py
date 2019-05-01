@@ -33,14 +33,21 @@ class LinkedQueue(object):
         return self.list.size
 
     def enqueue(self, item):
-        """Insert the given item at the back of this queue.
-        Running time: O(1) – Why? back of the queue can be accessed via LL head, no need to traverse"""
+        """Insert the given item at the back of this queue (head of LL).
+        Running time: O(1) – Why? >>> back of the queue can be accessed via LL head, no need to traverse"""
         # TODO: Insert given item
+        self.list.prepend(item)
+
 
     def front(self):
-        """Return the item at the front of this queue without removing it,
+        """Return the item at the front (tail of LL) of this queue without removing it,
         or None if this queue is empty."""
         # TODO: Return front item, if any
+        if not self.list:
+            return None
+        else:
+            return self.list.tail.data
+
 
     def dequeue(self):
         """Remove and return the item at the front of this queue,
