@@ -22,7 +22,7 @@ class LinkedQueue(object):
     def is_empty(self):
         """Return True if this queue is empty, or False otherwise."""
         # TODO: Check if empty
-        if not self.list:
+        if not self.list.head:
             return None
         else:
             return False
@@ -43,7 +43,7 @@ class LinkedQueue(object):
         """Return the item at the front (tail of the LL) of this queue without removing it,
         or None if this queue is empty."""
         # TODO: Return front item, if any
-        if not self.list:
+        if not self.list.head:
             return None
         else:
             return self.list.tail.data
@@ -54,7 +54,7 @@ class LinkedQueue(object):
         or raise ValueError if this queue is empty.
         Running time: O(1) – Why? >>> front of the queue is tail of the LL, can be accessed via tail.data"""
         # TODO: Remove and return front item, if any
-        if not self.list:
+        if not self.list.head:
             raise ValueError('The queue is empty')
         else:
             return self.list.delete
