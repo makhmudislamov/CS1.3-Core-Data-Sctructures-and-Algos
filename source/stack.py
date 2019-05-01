@@ -81,7 +81,7 @@ class ArrayStack(object):
     def is_empty(self):
         """Return True if this stack is empty, or False otherwise."""
         # TODO: Check if empty
-        if self.list[0] is None:
+        if not self.list:
             return True
         else:
             return False
