@@ -40,7 +40,6 @@ class LinkedStack(object):
         # TODO: Push given item
         self.list.append(item)
 
-
     def peek(self):
         """Return the item on the top of this stack without removing it,
         or None if this stack is empty."""
@@ -55,8 +54,11 @@ class LinkedStack(object):
         or raise ValueError if this stack is empty.
         Running time: O(???) – Why? [TODO]"""
         # TODO: Remove and return top item, if any
-        current_tail = self.list.tail.data
-        return self.list.delete(current_tail)
+        if self.list.head is None:
+            raise ValueError('The stack is empty')
+        else:
+            current_tail = self.list.tail.data
+            return self.list.delete(current_tail)
 
 # Implement ArrayStack below, then change the assignment at the bottom
 # to use this Stack implementation to verify it passes all tests

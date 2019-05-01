@@ -92,7 +92,10 @@ class LinkedList(object):
 
     def append(self, item):
         """Insert the given item at the tail of this linked list.
-        Best and worst case running time: ??? under what conditions? [TODO]"""
+        Best and worst case running time: 
+        Worst >> O(n) under what conditions? >>> tail is in the middle or at the end of LL
+        Best >> O(1) under what conditions? >>> tail is in the beginning of LL, LL is empty
+        """
         # Create a new node to hold the given item
         new_node = Node(item)
         # Check if this linked list is empty
