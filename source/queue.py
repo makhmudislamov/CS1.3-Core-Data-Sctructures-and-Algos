@@ -63,15 +63,21 @@ class ArrayQueue(object):
     def is_empty(self):
         """Return True if this queue is empty, or False otherwise."""
         # TODO: Check if empty
+        if not self.list:
+            return True
+        else:
+            return False
 
     def length(self):
         """Return the number of items in this queue."""
         # TODO: Count number of items
+        return len(self.list)
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(n) – Why? >>> after prepending item at the beginning of an array, we have to move items one postion to right """
         # TODO: Insert given item
+        
 
     def front(self):
         """Return the item at the front of this queue without removing it,
@@ -87,5 +93,5 @@ class ArrayQueue(object):
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below
 # to use each of your Queue implementations to verify they each pass all tests
-Queue = LinkedQueue
-# Queue = ArrayQueue
+# Queue = LinkedQueue
+Queue = ArrayQueue
