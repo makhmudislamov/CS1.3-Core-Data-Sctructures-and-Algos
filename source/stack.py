@@ -59,6 +59,7 @@ class LinkedStack(object):
             raise ValueError('The stack is empty')
         else:
             current_tail = self.list.tail.data
+            self.list.size -= 1
             return self.list.delete(current_tail)
 
 # Implement ArrayStack below, then change the assignment at the bottom
