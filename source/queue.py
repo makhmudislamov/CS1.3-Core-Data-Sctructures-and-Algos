@@ -23,7 +23,7 @@ class LinkedQueue(object):
         """Return True if this queue is empty, or False otherwise."""
         # TODO: Check if empty
         if not self.list.head:
-            return None
+            return True
         else:
             return False
 
