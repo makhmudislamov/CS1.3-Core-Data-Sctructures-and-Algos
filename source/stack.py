@@ -53,14 +53,14 @@ class LinkedStack(object):
     def pop(self):
         """Remove and return the item on the top of this stack,
         or raise ValueError if this stack is empty.
-        Running time: O(???) – Why? [TODO]"""
+        Running time: O(n) – Why? >>> we have to traverse the LL to reach the tail.data"""
         # TODO: Remove and return top item, if any
         if self.list.head is None:
             raise ValueError('The stack is empty')
         else:
             top_data = self.list.tail.data
             self.list.size -= 1
-            self.list.delete(top_data)
+            return self.list.delete(top_data)
 
 # Implement ArrayStack below, then change the assignment at the bottom
 # to use this Stack implementation to verify it passes all tests
@@ -115,5 +115,5 @@ class ArrayStack(object):
 
 # Implement LinkedStack and ArrayStack above, then change the assignment below
 # to use each of your Stack implementations to verify they each pass all tests
-# Stack = LinkedStack
-Stack = ArrayStack
+Stack = LinkedStack
+# Stack = ArrayStack
