@@ -62,33 +62,36 @@ class ArrayQueue(object):
 
     def is_empty(self):
         """Return True if this queue is empty, or False otherwise."""
-        # TODO: Check if empty
         if not self.list:
             return True
         else:
             return False
 
     def length(self):
-        """Return the number of items in this queue."""
-        # TODO: Count number of items
+        """Return the number of items in this queue.""" 
         return len(self.list)
 
     def enqueue(self, item):
         """Insert the given item at the back of this queue.
-        Running time: O(n) – Why? >>> after prepending item at the beginning of an array, we have to move items one postion to right """
-        # TODO: Insert given item
-        
+        Running time: O(1) – Why? >>> we can use insert func """
+        self.list.insert(0, item)
 
     def front(self):
         """Return the item at the front of this queue without removing it,
         or None if this queue is empty."""
-        # TODO: Return front item, if any
+        if not self.list:
+            return None
+        else:
+            return self.list[-1]
 
     def dequeue(self):
         """Remove and return the item at the front of this queue,
         or raise ValueError if this queue is empty.
-        Running time: O(???) – Why? [TODO]"""
-        # TODO: Remove and return front item, if any
+        Running time: O(1) – Why? >>> we can access the front of the queue with arr[index]"""
+        if not self.list:
+            raise ValueError('The queue is empty')
+        else:
+            return self.list.pop(-1)
 
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below
