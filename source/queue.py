@@ -50,13 +50,12 @@ class LinkedQueue(object):
         """Remove and return the item at the front of this queue (tail of the LL),
         or raise ValueError if this queue is empty.
         Running time: O(1) – Why? >>> front of the queue is tail of the LL, can be accessed via tail.data"""
-        # TODO: Remove and return front item, if any, BUG FIX here
         if not self.list.head:
             raise ValueError('The queue is empty')
         else:
             front_data = self.list.tail.data
-            self.list.size -= 1
-            return self.list.delete(front_data)
+            self.list.delete(front_data)
+            return front_data
 
 
 # Implement ArrayQueue below, then change the assignment at the bottom
