@@ -24,12 +24,20 @@ class Set(object):
             return self.hashtable.contains(element)
 
     def add(self, element):
-        """Adds element to this set, if not present already"""
-        self.hashtable.set(element, None)
-        self.size += 1
+        """Adds element to this set, if not present already
+        Time Complexity: O(1) >> set method of hastable is const time
+        Space Complexity: O(1) >> one new space is created for new element
+        """
+        if self.contains(element) is True:
+            return element
+        else:
+            self.hashtable.set(element, None)
+            self.size += 1
     
     def remove(self, element):
-        """Removes element from this set, if present, or else raise KeyError"""
+        """Removes element from this set, if present, or else raise KeyError
+        
+        """
         pass
 
     def union(self, other_set):
