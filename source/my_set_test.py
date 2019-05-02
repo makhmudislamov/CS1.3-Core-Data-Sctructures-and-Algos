@@ -22,14 +22,16 @@ class SetTest(unittest.TestCase):
 
     def test_add(self):
         """Adds element to this set, if not present already"""
-        # s = Set()
-        # assert s.add()
-        pass
+        s = Set([13])
+        assert s.size == 1  
+        assert s.contains(13) is True
+        
 
     
     def test_remove(self):
         """Removes element from this set, if present, or else raise KeyError"""
         pass
+
 
     def test_union(self):
         """Returns a new set that is the union of this set and other_set"""
