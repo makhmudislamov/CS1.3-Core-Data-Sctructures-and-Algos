@@ -29,9 +29,7 @@ class HashTable(object):
         Best O(1) >> single arithmetic operation 
         Worst O(n) >> ??? """
         load_factor = self.size / len(self.buckets)
-        return load_factor
-        
-        
+        return load_factor        
 
     def keys(self):
         """Return a list of all keys in this hash table.

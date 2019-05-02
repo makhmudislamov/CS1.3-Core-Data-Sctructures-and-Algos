@@ -7,10 +7,9 @@ class Set(object):
     def __init__(self, elements=None):
         self.hashtable = HashTable()
         self.size = 0
-        if elements not None:
+        if elements is not None:
             for element in elements:
                 self.add(element)
-
 
 
     def contains(self, element):
@@ -26,7 +25,8 @@ class Set(object):
 
     def add(self, element):
         """Adds element to this set, if not present already"""
-        pass
+        self.hashtable.set(element, None)
+        self.size += 1
     
     def remove(self, element):
         """Removes element from this set, if present, or else raise KeyError"""

@@ -12,7 +12,7 @@ class SetTest(unittest.TestCase):
 
     def test_contains(self):
         s = Set(['A', 'B', 'C'])
-        # assert s.size == 3
+        assert s.size == 3
         assert s.contains('A') is True
         assert s.contains('B') 
         assert s.contains('C') 
