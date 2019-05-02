@@ -83,7 +83,10 @@ class Set(object):
         return inter_set
     
     def difference(self, other_set):
-        """Returns a new set that is the difference of this set and other_set"""
+        """Returns a new set that is the difference of this set and other_set
+        Time Complexity: O(n) >> travaersing through the hashtable to collect and compare the elements 
+        Space Complexity: O(n) >> creating space for new each element one by one
+        """
         differ_set = Set()
         # smaller set has to be iterated and its elements should be compared to larger set
         if self.size > other_set.size:
@@ -102,7 +105,20 @@ class Set(object):
     
     def is_subset(self, other_set):
         """Returns a boolean indicating whether other_set is a subset of this set"""
-        pass
+         # smaller set has to be iterated and its elements should be compared to larger set
+        if self.size > other_set.size:
+            big_set = self
+            small_set = other_set
+        else:
+            big_set = other_set
+            small_set = self
+
+        for element in small_set.hashtable.keys():
+            if element in big_set.hashtable.keys():
+                return True
+            else:
+                return False
+        
 
 
 if __name__ == '__main__':

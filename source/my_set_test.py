@@ -83,7 +83,10 @@ class SetTest(unittest.TestCase):
     
     def test_is_subset(self):
         """Returns a boolean indicating whether other_set is a subset of this set"""
-        pass
+        s1 = Set([1, 2, 3, 4])
+        s2 = Set([3, 4])
+
+        assert s2.is_subset(s1) is True
 
 
 if __name__ == '__main__':
