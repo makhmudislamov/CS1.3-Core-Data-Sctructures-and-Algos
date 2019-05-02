@@ -30,7 +30,11 @@ class SetTest(unittest.TestCase):
     
     def test_remove(self):
         """Removes element from this set, if present, or else raise KeyError"""
-        pass
+        s = Set([12, 13, 14])
+        assert s.size == 3
+        s.remove(12)
+        assert s.size == 2
+        assert s.contains(12) is False  
 
 
     def test_union(self):
