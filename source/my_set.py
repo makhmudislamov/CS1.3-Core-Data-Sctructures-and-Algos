@@ -9,7 +9,11 @@ class Set(object):
 
     def contains(self, element):
         """Returns a boolean indicating whether element is in this set"""
-        pass
+        #TODO: write test
+        if not self.hashtable:
+            raise ValueError('Empty Hashtable')
+        else:
+            self.hashtable.contains(element)
 
     def add(self, element):
         """Adds element to this set, if not present already"""
