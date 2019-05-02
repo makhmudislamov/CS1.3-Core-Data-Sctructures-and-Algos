@@ -63,7 +63,18 @@ class Set(object):
 
     def intersection(self, other_set):
         """Returns a new set that is the intersection of this set and other_set"""
-        pass
+        # create inter_set to have common elements
+        # iterate through self to see elements
+        # if element exists in other set
+        # add the element to inter_set
+        # return inter_set
+        inter_set = Set()
+
+        for element in self.hashtable.keys():
+            if element in other_set.hashtable.keys():
+                inter_set.add(element)
+        
+        return inter_set
     
     def difference(self, other_set):
         """Returns a new set that is the difference of this set and other_set"""

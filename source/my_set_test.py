@@ -53,12 +53,10 @@ class SetTest(unittest.TestCase):
 
         assert united_set.contains(7) is False
 
-
-
     def test_intersection(self):
         """Returns a new set that is the intersection of this set and other_set"""
-        s1 = Set(1, 2, 3, 4)
-        s2 = Set(3, 4, 5, 6)
+        s1 = Set([1, 2, 3, 4])
+        s2 = Set([3, 4, 5, 6])
 
         inter_set = s1.test_intersection(s2)
 
