@@ -58,7 +58,7 @@ class SetTest(unittest.TestCase):
         s1 = Set([1, 2, 3, 4])
         s2 = Set([3, 4, 5, 6])
 
-        inter_set = s1.test_intersection(s2)
+        inter_set = s1.intersection(s2)
 
         assert inter_set.contains(3) is True
         assert inter_set.contains(4) is True
