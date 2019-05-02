@@ -36,9 +36,14 @@ class Set(object):
     
     def remove(self, element):
         """Removes element from this set, if present, or else raise KeyError
-        
+        Time Complexity: O(1) >> delete method of hastable is const time
+        Space Complexity: O(1) >> removing the element is const time, no need to traverse
         """
-        pass
+        if self.contains(element) is True:
+            raise KeyError('Element does not exist')
+        else:
+            self.hashtable.delete(element)
+            self.size -= 1
 
     def union(self, other_set):
         """Returns a new set that is the union of this set and other_set"""
