@@ -1,19 +1,28 @@
 #!python
+
 from hashtable import HashTable
+
 class Set(object):
 
     def __init__(self, elements=None):
         self.hashtable = HashTable()
         self.size = 0
-        
+        if elements not None:
+            for element in elements:
+                self.add(element)
+
+
 
     def contains(self, element):
-        """Returns a boolean indicating whether element is in this set"""
+        """Returns a boolean indicating whether element is in this set
+        Time Complexity: O(1) >> hashtable lookup is a const operation on average case
+        Space Complexity: O(1) >> accessing data
+        """
         #TODO: write test
         if not self.hashtable:
             raise ValueError('Empty Hashtable')
         else:
-            self.hashtable.contains(element)
+            return self.hashtable.contains(element)
 
     def add(self, element):
         """Adds element to this set, if not present already"""
