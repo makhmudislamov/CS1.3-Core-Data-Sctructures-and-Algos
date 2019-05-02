@@ -1,9 +1,11 @@
 #!python
-
+from hashtable import HashTable
 class Set(object):
 
     def __init__(self, elements=None):
+        self.hashtable = HashTable()
         self.size = 0
+        
 
     def contains(self, element):
         """Returns a boolean indicating whether element is in this set"""

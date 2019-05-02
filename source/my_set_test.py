@@ -1,14 +1,20 @@
 #!python
 
-from st import Set
+from my_set import Set
 import unittest
 
 class SetTest(unittest.TestCase):
-    pass
-
-    def test_add(self, element):
-        """Adds element to this set, if not present already"""
+    
+    def test_init(self):
+        # s = Set()
+        # assert s
         pass
+
+    def test_add(self):
+        """Adds element to this set, if not present already"""
+        s = Set()
+        assert s.add()
+
     
     def test_remove(self, element):
         """Removes element from this set, if present, or else raise KeyError"""
