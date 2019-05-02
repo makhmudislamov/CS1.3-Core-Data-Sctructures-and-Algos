@@ -57,7 +57,15 @@ class SetTest(unittest.TestCase):
 
     def test_intersection(self):
         """Returns a new set that is the intersection of this set and other_set"""
-        pass
+        s1 = Set(1, 2, 3, 4)
+        s2 = Set(3, 4, 5, 6)
+
+        inter_set = s1.test_intersection(s2)
+
+        assert inter_set.contains(3) is True
+        assert inter_set.contains(4) is True
+
+        assert inter_set.contains(1) is False
     
     def test_difference(self):
         """Returns a new set that is the difference of this set and other_set"""

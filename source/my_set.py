@@ -46,8 +46,20 @@ class Set(object):
             self.size -= 1
 
     def union(self, other_set):
-        """Returns a new set that is the union of this set and other_set"""
+        """Returns a new set that is the union of this set and other_set
+        Time Complexity: O(2n) >> O(n) >> travaersing through the hashtables to collect the elements 
+        Space Complexity: O(n) >> creating space for new each element one by one
+        """
         united_set = Set()
+        # adding elements of self to united_set
+        for element in self.hashtable.keys():
+            united_set.add(element)
+        # adding elements of other_set to united_set
+        for element in other_set.hashtable.keys():
+            united_set.add(element)
+        
+        return united_set
+
 
     def intersection(self, other_set):
         """Returns a new set that is the intersection of this set and other_set"""
