@@ -47,7 +47,7 @@ class Set(object):
 
     def union(self, other_set):
         """Returns a new set that is the union of this set and other_set"""
-        pass
+        united_set = Set()
 
     def intersection(self, other_set):
         """Returns a new set that is the intersection of this set and other_set"""

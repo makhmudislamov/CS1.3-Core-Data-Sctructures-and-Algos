@@ -39,7 +39,21 @@ class SetTest(unittest.TestCase):
 
     def test_union(self):
         """Returns a new set that is the union of this set and other_set"""
-        pass
+        s1 = Set([1, 2, 3])
+        s2 = Set([4, 5, 6])
+
+        united_set = s1.union(s2)
+
+        assert united_set.contains(1) is True
+        assert united_set.contains(2) is True
+        assert united_set.contains(3) is True
+        assert united_set.contains(4) is True
+        assert united_set.contains(5) is True
+        assert united_set.contains(6) is True
+
+        assert united_set.contains(7) is False
+
+
 
     def test_intersection(self):
         """Returns a new set that is the intersection of this set and other_set"""
