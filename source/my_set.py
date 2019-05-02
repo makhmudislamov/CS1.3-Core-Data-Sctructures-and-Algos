@@ -84,7 +84,20 @@ class Set(object):
     
     def difference(self, other_set):
         """Returns a new set that is the difference of this set and other_set"""
-       
+        differ_set = Set()
+        # smaller set has to be iterated and its elements should be compared to larger set
+        if self.size > other_set.size:
+            big_set = self
+            small_set = other_set
+        else:
+            big_set = other_set
+            small_set = self
+
+        for element in small_set.hashtable.keys():
+            if element not in big_set.hashtable.keys():
+                differ_set.add(element)
+        
+        return differ_set
         
     
     def is_subset(self, other_set):
