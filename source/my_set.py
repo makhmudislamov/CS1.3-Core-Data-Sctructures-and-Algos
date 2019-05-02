@@ -39,7 +39,7 @@ class Set(object):
         Time Complexity: O(1) >> delete method of hastable is const time
         Space Complexity: O(1) >> removing the element is const time, no need to traverse
         """
-        if self.contains(element) is True:
+        if self.contains(element) is False:
             raise KeyError('Element does not exist')
         else:
             self.hashtable.delete(element)
