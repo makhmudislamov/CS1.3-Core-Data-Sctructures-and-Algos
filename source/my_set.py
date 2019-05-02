@@ -84,7 +84,8 @@ class Set(object):
     
     def difference(self, other_set):
         """Returns a new set that is the difference of this set and other_set"""
-        pass
+       
+        
     
     def is_subset(self, other_set):
         """Returns a boolean indicating whether other_set is a subset of this set"""

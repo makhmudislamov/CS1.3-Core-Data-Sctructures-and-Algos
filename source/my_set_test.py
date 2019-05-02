@@ -67,7 +67,17 @@ class SetTest(unittest.TestCase):
     
     def test_difference(self):
         """Returns a new set that is the difference of this set and other_set"""
-        pass
+        s1 = Set([1, 2, 3, 4])
+        s2 = Set([3, 4, 5, 6])
+
+        diff_set = s1.difference(s2)
+
+        assert diff_set.contains(1) is True
+        assert diff_set.contains(2) is True
+        assert diff_set.contains(5) is True
+        assert diff_set.contains(6) is True
+
+        assert diff_set.contains(3) is False
     
     def test_is_subset(self):
         """Returns a boolean indicating whether other_set is a subset of this set"""
