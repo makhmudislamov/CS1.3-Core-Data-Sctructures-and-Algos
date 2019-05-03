@@ -46,8 +46,8 @@ class Set(object):
 
     def union(self, other_set):
         """Returns a new set that is the union of this set and other_set
-        Time Complexity: O(2n) >> O(n) >> travaersing through the hashtables to collect the elements. n + m  
-        Space Complexity: O(n) >> creating space for new each element one by one. n + m  
+        Time Complexity: O(n+m) >> two loops >> two different hashtables and each has own length 
+        Space Complexity: O(n+m) >> creating space for new each element one by one. n + m  
         """
         united_set = Set()
         # adding elements of self to united_set
@@ -99,7 +99,10 @@ class Set(object):
         
     
     def is_subset(self, other_set):
-        """Returns a boolean indicating whether other_set is a subset of this set"""
+        """Returns a boolean indicating whether other_set is a subset of this set
+        Time Complexity: O(n) >> travaersing through the hashtable to collect and compare the elements 
+        Space Complexity: O(n) >> creating space for new each element one by one
+        """
          # smaller set has to be iterated and its elements should be compared to larger set
         if self.size > other_set.size:
             big_set = self
