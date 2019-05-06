@@ -19,6 +19,14 @@ def linear_search_iterative(array, item):
 
 def linear_search_recursive(array, item, index=0):
     """return the index of a wanted item implementing linear recursive search"""
+    # PSEUDOCODE for SPD activity:
+
+    # check for base cases:
+    # 1. if array is empty
+    # 2. if the index is greated than the length
+    # 3. entered index is what we are looking for >> return the index
+    # if none of the above call the func recursively
+    
     # base case1 array is empty
     if len(array) == 0:
         return None
