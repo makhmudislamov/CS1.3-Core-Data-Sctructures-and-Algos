@@ -80,12 +80,12 @@ class BinarySearchTree(object):
     def search(self, item):
         """Return an item in this binary search tree matching the given item,
         or None if the given item is not found.
-        TODO: Best case running time: ??? under what conditions?
-        TODO: Worst case running time: ??? under what conditions?"""
+        Best running time: O(1) >> item is in the root
+        Worst case running time: O(n) >> item is not in the root"""
         # Find a node with the given item, if any
         node = self._find_node_recursive(item, self.root)
         # TODO: Return the node's data if found, or None
-        return node.data if ... else None
+        return node.data if node else None
 
     def insert(self, item):
         """Insert the given item in order into this binary search tree.
