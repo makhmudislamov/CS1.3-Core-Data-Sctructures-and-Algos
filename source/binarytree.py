@@ -16,7 +16,8 @@ class BinaryTreeNode(object):
     def is_leaf(self):
         """Return True if this node is a leaf (has no children)."""
         # TODO: Check if both left child and right child have no value
-        return ... and ...
+        return True if self.right == None and self.left == None else False
+        
 
     def is_branch(self):
         """Return True if this node is a branch (has at least one child)."""
@@ -88,7 +89,7 @@ class BinarySearchTree(object):
             # TODO: Create a new root node
             self.root = ...
             # TODO: Increase the tree size
-            self.size ...
+            # self.size ...
             return
         # Find the parent node of where the given item should be inserted
         parent = self._find_parent_node_recursive(item, self.root)
@@ -101,7 +102,7 @@ class BinarySearchTree(object):
             # TODO: Create a new node and set the parent's right child
             parent.right = ...
         # TODO: Increase the tree size
-        self.size ...
+        # self.size ...
 
     def _find_node_iterative(self, item):
         """Return the node containing the given item in this binary search tree,
