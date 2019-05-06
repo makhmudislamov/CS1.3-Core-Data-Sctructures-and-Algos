@@ -27,15 +27,20 @@ class BinaryTreeNode(object):
         """Return the height of this node (the number of edges on the longest
         downward path from this node to a descendant leaf node).
         TODO: Best and worst case running time: ??? under what conditions?"""
-        edge = 0
-        # TODO: Check if left child has a value and if so calculate its height
+        
+        # Check if left child has a value and if so calculate its height
+        left_edges = 0
         if self.left != None:
-            edge += 1
-        # TODO: Check if right child has a value and if so calculate its height
+            left_edges = 1 + self.left.height()
+        # Check if right child has a value and if so calculate its height
+        right_edges = 0
         if self.right != None:
-            edge += 1
+            right_edges = 1 + self.right.height()
         # Return one more than the greater of the left height and right height
-        ...
+        if left_edges > right_edges:
+            return left_edges
+        else:
+            return right_edges
 
 
 class BinarySearchTree(object):
