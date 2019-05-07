@@ -146,6 +146,7 @@ class LinkedList(object):
         """Insert the given item at the head of this linked list.
         Best and worst case running time: ??? under what conditions? [TODO]"""
         # Create a new node to hold the given item
+        self.size += 1
         new_node = Node(item)
         # Check if this linked list is empty
         if self.is_empty():
@@ -178,11 +179,19 @@ class LinkedList(object):
     def replace(self, old_item, new_item):
         """Replace the given old_item in this linked list with given new_item
         using the same node, or raise ValueError if old_item is not found.
-        Best case running time: ??? under what conditions? [TODO]
-        Worst case running time: ??? under what conditions? [TODO]"""
-        # TODO: Find the node containing the given old_item and replace its
+        Best case running time: O(1) >> replace the old item
+        Worst case running time: O(n) >> item is towards the end"""
+        # Find the node containing the given old_item and replace its
         # data with new_item, without creating a new node object
-        pass
+        node = self.head
+
+        while node != None:
+            if node.data == old_item:
+                node.data = new_item
+                return
+            node = node.next
+
+        raise ValueError('item not in lists: {}'.format(old_item))
 
     def delete(self, item):
         """Delete the given item from this linked list, or raise ValueError.
