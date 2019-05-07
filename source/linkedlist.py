@@ -78,7 +78,15 @@ class LinkedList(object):
         # Check if the given index is out of range and if so raise an error
         if not (0 <= index < self.size):
             raise ValueError('List index out of range: {}'.format(index))
-        # TODO: Find the node at the given index and return its data
+        # Find the node at the given index and return its data
+        node = self.head
+        while index > 0:
+            node = node.next
+            index -= 1
+        return node.data
+            
+
+
 
     def insert_at_index(self, index, item):
         """Insert the given item at the given index in this linked list, or
