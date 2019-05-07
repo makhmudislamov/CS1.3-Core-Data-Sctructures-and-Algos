@@ -99,12 +99,28 @@ class LinkedList(object):
     def insert_at_index(self, index, item):
         """Insert the given item at the given index in this linked list, or
         raise ValueError if the given index is out of range of the list size.
-        Best case running time: ??? under what conditions? [TODO]
-        Worst case running time: ??? under what conditions? [TODO]"""
+        Best case running time: O(1) >> inserting at the beginning or at the end
+        Worst case running time: O(n) >> inserting towards the end"""
         # Check if the given index is out of range and if so raise an error
         if not (0 <= index <= self.size):
             raise ValueError('List index out of range: {}'.format(index))
-        # TODO: Find the node before the given index and insert item after it
+        # Find the node before the given index and insert item after it
+        # beginning of the LL
+        if index == 0:                 
+            self.prepend(item)
+        # the end of the LL
+        elif index == self.size:       
+            self.append(item)
+        else:                          
+            new_node = Node(item)       
+            node = self.head            
+            while index > 1:            
+                node = node.next
+                index -= 1
+            new_node.next = node.next
+            node.next = new_node
+            self.size += 1
+       
         
 
     def append(self, item):
