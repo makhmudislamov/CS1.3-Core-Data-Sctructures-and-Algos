@@ -82,8 +82,8 @@ class BinarySearchTree(object):
     def search(self, item):
         """Return an item in this binary search tree matching the given item,
         or None if the given item is not found.
-        Best running time: O(1) >> item is in the root
-        Worst case running time: O(n) >> item is not in the root"""
+        Best running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Find a node with the given item, if any
         node = self._find_node_recursive(item, self.root)
         # Return the node's data if found, or None
@@ -91,8 +91,8 @@ class BinarySearchTree(object):
 
     def insert(self, item):
         """Insert the given item in order into this binary search tree.
-        TODO: Best case running time: ??? under what conditions?
-        TODO: Worst case running time: ??? under what conditions?"""
+        Best case running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Handle the case where the tree is empty
         if self.is_empty():
             #  Create a new root node
@@ -117,8 +117,8 @@ class BinarySearchTree(object):
         """Return the node containing the given item in this binary search tree,
         or None if the given item is not found. Search is performed iteratively
         starting from the root node.
-        TODO: Best case running time: ??? under what conditions?
-        TODO: Worst case running time: ??? under what conditions?"""
+        Best case running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Start with the root node
         node = self.root
         # Loop until we descend past the closest leaf node
@@ -142,8 +142,8 @@ class BinarySearchTree(object):
         """Return the node containing the given item in this binary search tree,
         or None if the given item is not found. Search is performed recursively
         starting from the given node (give the root node to start recursion).
-        TODO: Best case running time: ??? under what conditions?
-        TODO: Worst case running time: ??? under what conditions?"""
+        Best case running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Check if starting node exists
         if node is None:
             # Not found (base case)
@@ -166,8 +166,8 @@ class BinarySearchTree(object):
         (or the parent node of where the given item would be if inserted)
         in this tree, or None if this tree is empty or has only a root node.
         Search is performed iteratively starting from the root node.
-        TODO: Best case running time: ??? under what conditions?
-        TODO: Worst case running time: ??? under what conditions?"""
+         Best case running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Start with the root node and keep track of its parent
         node = self.root
         parent = None
@@ -236,8 +236,8 @@ class BinarySearchTree(object):
     def _traverse_in_order_recursive(self, node, visit):
         """Traverse this binary tree with recursive in-order traversal (DFS).
         Start at the given node and visit each node with the given function.
-        TODO: Running time: ??? Why and under what conditions?
-        TODO: Memory usage: ??? Why and under what conditions?"""
+        Best case running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Traverse left subtree, if it exists
         if node.left != None:
             self._traverse_in_order_recursive(node.left, visit)
@@ -266,8 +266,8 @@ class BinarySearchTree(object):
     def _traverse_pre_order_recursive(self, node, visit):
         """Traverse this binary tree with recursive pre-order traversal (DFS).
         Start at the given node and visit each node with the given function.
-        TODO: Running time: ??? Why and under what conditions?
-        TODO: Memory usage: ??? Why and under what conditions?"""
+        Best case running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Visit this node's data with given function
         visit(node.data)
         # Traverse left subtree, if it exists
@@ -296,8 +296,8 @@ class BinarySearchTree(object):
     def _traverse_post_order_recursive(self, node, visit):
         """Traverse this binary tree with recursive post-order traversal (DFS).
         Start at the given node and visit each node with the given function.
-        TODO: Running time: ??? Why and under what conditions?
-        TODO: Memory usage: ??? Why and under what conditions?"""
+        Best case running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Traverse left subtree, if it exists
         if node.left != None:
             self._traverse_pre_order_recursive(node.left, visit)
@@ -327,17 +327,17 @@ class BinarySearchTree(object):
     def _traverse_level_order_iterative(self, start_node, visit):
         """Traverse this binary tree with iterative level-order traversal (BFS).
         Start at the given node and visit each node with the given function.
-        TODO: Running time: ??? Why and under what conditions?
-        TODO: Memory usage: ??? Why and under what conditions?"""
+        Best case running time: O(logn) >> tree is balanced
+        Worst case running time: O(n) >> tree is not balanced"""
         # Create queue to store nodes not yet traversed in level-order
         queue = LinkedQueue()
-        # TODO: Enqueue given starting node
+        # Enqueue given starting node
         queue.enqueue(start_node)
         # Loop until queue is empty
         while not queue.is_empty():
             # Dequeue node at front of queue
             node = queue.dequeue()
-            # TODO: Visit this node's data with given function
+            # Visit this node's data with given function
             visit(node.data)
             # Enqueue this node's left child, if it exists
             if node.left != None:
