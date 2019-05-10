@@ -103,7 +103,7 @@ class BinarySearchTree(object):
         # Find the parent node of where the given item should be inserted
         parent = self._find_parent_node_recursive(item, self.root)
         # Check if the given item should be inserted left of parent node
-        if item < parent:
+        if item < parent.data:
             # Create a new node and set the parent's left child
             parent.left = BinaryTreeNode(item)
         # Check if the given item should be inserted right of parent node
@@ -196,10 +196,13 @@ class BinarySearchTree(object):
         in this tree, or None if this tree is empty or has only a root node.
         Search is performed recursively starting from the given node
         (give the root node to start recursion)."""
-        # Check if starting node exists
-        if node is None:
+        # Check if starting node exists, root is None
+        if node is None and parent is None:
             # Not found (base case)
             return None
+        # parent is not None in this case
+        if node is None:
+            return parent
         # Check if the given item matches the node's data
         if item == node.data:
             # Return the parent of the found node

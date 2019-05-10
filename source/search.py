@@ -58,13 +58,14 @@ def binary_search_iterative(array, item):
     while left <= right:
         # declaring midpoint index
         mid_index = (left + right) // 2
+        
         if array[left] == item:
             return left
         # check if item in the midpoint is what we need
         elif array[mid_index] == item:
             return mid_index
         # if midpoint item is greater than wanted item, shift midpoint
-        elif array[mid_index] > item:
+        elif array[mid_index] < item:
             left = mid_index + 1
         else:
             right = mid_index - 1

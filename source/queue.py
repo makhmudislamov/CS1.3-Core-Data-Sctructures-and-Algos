@@ -105,10 +105,10 @@ class ArrayQueue(object):
         if not self.list:
             raise ValueError('The queue is empty')
         else:
-            return self.list.pop(-1)
+            return self.list.pop()
 
 
 # Implement LinkedQueue and ArrayQueue above, then change the assignment below
 # to use each of your Queue implementations to verify they each pass all tests
-Queue = LinkedQueue
-# Queue = ArrayQueue
+# Queue = LinkedQueue
+Queue = ArrayQueue
