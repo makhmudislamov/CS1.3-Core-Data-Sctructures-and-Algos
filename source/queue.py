@@ -34,7 +34,7 @@ class LinkedQueue(object):
         """Insert the given item at the back of this queue (head of the LL).
         Running time: O(1) – Why? >>> back of the queue can be accessed via LL head, no need to traverse"""
         self.list.prepend(item)
-        self.list.size += 1
+        # self.list.size += 1
 
 
     def front(self):
