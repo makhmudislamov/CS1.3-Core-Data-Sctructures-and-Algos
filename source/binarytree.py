@@ -155,11 +155,11 @@ class BinarySearchTree(object):
         # Check if the given item is less than the node's data
         elif item < node.data:
             # Recursively descend to the node's left child, if it exists
-            return self._find_node_recursive(self, item, node.left)
+            return self._find_node_recursive(item, node.left)
         # Check if the given item is greater than the node's data
         elif item > node.data:
             # Recursively descend to the node's right child, if it exists
-            return self._find_node_recursive(self, item, node.right)
+            return self._find_node_recursive(item, node.right)
 
     def _find_parent_node_iterative(self, item):
         """Return the parent node of the node containing the given item
