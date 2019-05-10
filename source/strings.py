@@ -5,14 +5,14 @@ def contains(text, pattern):
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # Implement contains here (iteratively and/or recursively)
-    index = find_index(text, pattern)
+    matches = find_index(text, pattern)
 
     if len(pattern) == 0:
         return True
     elif len(pattern) > len(text):
         return False
-    elif index != None:
-        return
+    elif matches != None:
+        return True
     else: 
         return False
 
@@ -24,21 +24,29 @@ def find_index(text, pattern):
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # Implement find_index here (iteratively and/or recursively)
-    if len(pattern) == 0:
-        return False
-    for i in range(len(text) - len(pattern) + 1):
-        # checking the first index to pattern str
-        if text[i] == pattern[0]:             
-            is_match = True
-            # Check if the indices match pattern
-            for j in range(1, len(pattern)):  
-               if text[i + j] != pattern[j]:  
-                   is_match = False
-                   i += 1
-                   break
-            if is_match == True:         
-                return i
+    # if len(pattern) == 0:
+    #     return False
+    # for i in range(len(text) - len(pattern) + 1):
+    #     # checking the first index to pattern str
+    #     if text[i] == pattern[0]:             
+    #         is_match = True
+    #         # Check if the indices match pattern
+    #         for j in range(1, len(pattern)):  
+    #            if text[i + j] != pattern[j]:  
+    #                is_match = False
+    #                i += 1
+    #                break
+    #         if is_match == True:         
+    #             return i
+    # return None
+
+    matches = find_all_indexes(text, pattern)
+    if len(matches) > 0:
+        return matches[0]
+
     return None
+
+
 
 
 def find_all_indexes(text, pattern):
