@@ -300,10 +300,10 @@ class BinarySearchTree(object):
         Worst case running time: O(n) >> tree is not balanced"""
         # Traverse left subtree, if it exists
         if node.left != None:
-            self._traverse_pre_order_recursive(node.left, visit)
+            self._traverse_post_order_recursive(node.left, visit)
         # Traverse right subtree, if it exists
         if node.right != None:
-            self._traverse_pre_order_recursive(node.right, visit)
+            self._traverse_post_order_recursive(node.right, visit)
         # Visit this node's data with given function
         visit(node.data)
         
