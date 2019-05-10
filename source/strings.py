@@ -1,7 +1,14 @@
 #!python
 
 def contains(text, pattern):
-    """Return a boolean indicating whether pattern occurs in text."""
+    """Return a boolean indicating whether pattern occurs in text.
+    TIME
+    Best case: O(1) >> pattern None
+    Worst case: O(n*l) >> n = text length, l = pattern length
+
+    SPACE
+    O(n) >> n = size of a list returned from find_index
+    """
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # Implement contains here (iteratively and/or recursively)
@@ -20,26 +27,18 @@ def contains(text, pattern):
 
 def find_index(text, pattern):
     """Return the starting index of the first occurrence of pattern in text,
-    or None if not found."""
+    or None if not found.
+    TIME
+    Best case: O(1) >> pattern None
+    Worst case: O(n*l) >> n = text length, l = pattern length
+
+    SPACE
+    O(n) >> n = size of a list returned from find_all_indexes
+    """
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # Implement find_index here (iteratively and/or recursively)
-    # if len(pattern) == 0:
-    #     return False
-    # for i in range(len(text) - len(pattern) + 1):
-    #     # checking the first index to pattern str
-    #     if text[i] == pattern[0]:             
-    #         is_match = True
-    #         # Check if the indices match pattern
-    #         for j in range(1, len(pattern)):  
-    #            if text[i + j] != pattern[j]:  
-    #                is_match = False
-    #                i += 1
-    #                break
-    #         if is_match == True:         
-    #             return i
-    # return None
-
+    
     matches = find_all_indexes(text, pattern)
     if len(matches) > 0:
         return matches[0]
@@ -51,7 +50,14 @@ def find_index(text, pattern):
 
 def find_all_indexes(text, pattern):
     """Return a list of starting indexes of all occurrences of pattern in text,
-    or an empty list if not found."""
+    or an empty list if not found.
+    TIME
+    Best case: O(1) >> pattern None
+    Worst case: O(n*l) >> n = text length, l = pattern length
+
+    SPACE
+    O(n) >> n = size of a list returned in this function
+    """
     assert isinstance(text, str), 'text is not a string: {}'.format(text)
     assert isinstance(pattern, str), 'pattern is not a string: {}'.format(text)
     # Implement find_all_indexes here (iteratively and/or recursively)
